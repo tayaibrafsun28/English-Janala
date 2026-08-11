@@ -33,14 +33,17 @@ const displayLevelWords = (words) =>{
     wordContainer.innerHTML = ``;
 
 
-//     {
-        
-// id: 81
-// level: 1
-// meaning: "বল"
-// pronunciation: "বল"
-// word: "Ball"
-//     }
+    if(words.length == 0){
+       wordContainer.innerHTML = `
+       
+       <div class="col-span-full text-center space-y-3">
+       <img src="./assets/alert-error.png" alt="" class="mx-auto">
+                <p class="text-[#79716B] font-bangla">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                <h1 class="text-col1 font-bangla font-medium text-3xl">নেক্সট Lesson এ যান</h1>
+            </div>
+       
+       `;
+    }
 
     // get into every lessons
 
@@ -55,9 +58,9 @@ const displayLevelWords = (words) =>{
     <div class="word-card bg-white p-7 text-center rounded-xl">
 
                 <div class="space-y-3">
-                    <h1 class="text-2xl md:text-3xl font-bold">${word.word}</h1>
-                    <p class="text-lg md:text-xl font-medium">Meaning /Pronounciation</p>
-                    <p class=" text-xl md:text-2xl font-semibold">${word.meaning} / ${word.pronunciation}</p>
+                    <h1 class="text-2xl lg:text-3xl font-bold">${word.word}</h1>
+                    <p class="text-lg lg:text-xl font-medium">Meaning /Pronounciation</p>
+                    <p class=" text-xl lg:text-2xl font-semibold font-bangla">${word.meaning} / ${word.pronunciation}</p>
                 </div>
 
                 <div class="flex justify-between mt-8">
