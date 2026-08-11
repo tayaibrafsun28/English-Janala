@@ -1,6 +1,5 @@
 // load lesson function
 
-
 const loadLessons = () =>{
 
     const levelURL = "https://openapi.programming-hero.com/api/levels/all"
@@ -46,8 +45,7 @@ const displayLevelWords = (words) =>{
     // get into every lessons
 
     words.forEach((word) => {
-        console.log(word)
-
+ 
         // create element
 
     const wordCard = document.createElement('div')
@@ -95,7 +93,7 @@ const displayLessons = (lessons) =>{
 
     // step 2 : get into every lessons
 
-    for(let lesson of lessons){
+    lessons.forEach((lesson) =>{
     
     // step 3 : create element
 
@@ -112,7 +110,7 @@ const displayLessons = (lessons) =>{
 
     levelContainer.append(btnDiv)
 
-}
+});
 
 }
 
