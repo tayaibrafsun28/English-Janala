@@ -57,9 +57,9 @@ const displayLevelWords = (words) =>{
     <div class="word-card bg-white p-7 text-center rounded-xl">
 
                 <div class="space-y-3">
-                    <h1 class="text-3xl font-bold">${word.word}</h1>
-                    <p class="text-xl font-medium">Meaning /Pronounciation</p>
-                    <p class="text-2xl font-semibold">${word.meaning} / ${word.pronunciation}</p>
+                    <h1 class="text-2xl md:text-3xl font-bold">${word.word}</h1>
+                    <p class="text-lg md:text-xl font-medium">Meaning /Pronounciation</p>
+                    <p class=" text-xl md:text-2xl font-semibold">${word.meaning} / ${word.pronunciation}</p>
                 </div>
 
                 <div class="flex justify-between mt-8">
