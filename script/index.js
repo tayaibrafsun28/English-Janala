@@ -81,14 +81,14 @@ const displayLevelWords = (words) =>{
                 </div>
 
                 <div class="flex justify-between mt-8">
-                    <span class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-circle-info"></i></span>
-                    <span class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-volume"></i></span>
+                    <button onclick="my_modal_5.showModal()" class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-circle-info"></i></button>
+                    <button class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-volume"></i></button>
                 </div>
 
     </div>
 
     `
-    
+
     // append to word container
 
     wordContainer.append(wordCard)
