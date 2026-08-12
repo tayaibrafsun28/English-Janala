@@ -8,6 +8,15 @@ const loadLessons = () =>{
     .then(json => displayLessons(json.data));
 }
 
+// remove active function
+
+const removeActive = () =>{
+    const lessonBtn = document.querySelectorAll(".lesson-btn")
+
+    lessonBtn.forEach(btn => btn.classList.remove('active'))
+}
+
+
 // load words function
 
 const loadLevelWord = (id) =>{
@@ -16,7 +25,15 @@ const loadLevelWord = (id) =>{
     
     fetch(levelWordURL) //promise of response
     .then(res => res.json()) // promise of json data
-    .then(data => displayLevelWords(data.data))
+    .then(data => {
+
+        removeActive();
+
+        const activeBtn = document.getElementById(`lesson-btn-${id}`)
+        activeBtn.classList.add('active');
+
+        displayLevelWords(data.data);
+    })
 
 }
 
@@ -71,7 +88,7 @@ const displayLevelWords = (words) =>{
     </div>
 
     `
-
+    
     // append to word container
 
     wordContainer.append(wordCard)
@@ -104,7 +121,7 @@ const displayLessons = (lessons) =>{
 
     btnDiv.innerHTML = `
     
-    <button onclick='loadLevelWord(${lesson.level_no})' class="btn btn-outline btn-primary"> 
+    <button id="lesson-btn-${lesson.level_no}" onclick='loadLevelWord(${lesson.level_no})' class="btn btn-outline btn-primary lesson-btn"> 
         <i class="fa-solid fa-book-open">
         </i>Lesson -${lesson.level_no}
     </button> `

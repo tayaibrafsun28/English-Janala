@@ -17,3 +17,8 @@
 .text-col3{
      color: #00BCFF;
 }
+
+.active{
+     background-color: #422AD5;
+     color: white;
+}
