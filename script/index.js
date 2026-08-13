@@ -53,7 +53,7 @@ const loadLevelWord = (id) =>{
     .then(res => res.json()) // promise of json data
     .then(data => {
 
-        removeActive();
+        removeActive(); //remove all active class from word level btns
 
         const activeBtn = document.getElementById(`lesson-btn-${id}`)
         activeBtn.classList.add('active');
@@ -121,6 +121,7 @@ const displayWordDetails = (words) =>{
 const displayLevelWords = (words) =>{
     
 loadingSpinner(true)
+
     // get container and empty it
 
     const wordContainer = document.getElementById('word-container')
@@ -148,7 +149,7 @@ loadingSpinner(true)
 
     words.forEach((word) => {
  
-        // create element
+    // create element
 
     const wordCard = document.createElement('div')
 
