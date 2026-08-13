@@ -108,7 +108,8 @@
                         </a>
                     </li>
 
-                    <li>
+
+                    <li id="logout-btn" onclick="logout()" class="hidden">
                         <a class="btn btn-outline btn-primary">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
                         </a>
@@ -141,12 +142,14 @@
 
                 <div class="flex flex-col items-center md:items-start gap-3 ">
 
-                    <input type="text" placeholder="Enter Your Name"
-                        class="px-10 py-1.5 text-sm border border-[#DDDDDD] rounded-sm">
-                    <input type="text" placeholder="Enter Your Password"
+                    <input id="user-name" type="text" placeholder="Enter User Your Name"
                         class="px-10 py-1.5 text-sm border border-[#DDDDDD] rounded-sm">
 
-                    <button href="" class="btn btn-primary self-center md:self-start mt-2">Get Started</button>
+                    <input id="password" type="text" placeholder="Enter Your Password"
+                        class="px-10 py-1.5 text-sm border border-[#DDDDDD] rounded-sm">
+
+                    <button onclick="login()" class="btn btn-primary self-center md:self-start mt-2">Get
+                        Started</button>
                 </div>
 
 
@@ -227,6 +230,7 @@
     </main>
 
     <script src="./script/index.js"></script>
+    <script src="./script/login.js"></script>
 </body>
 
 </html>
