@@ -216,4 +216,6 @@ const displayLessons = (lessons) =>{
 
 }
 
+// calling loadLessons function
+
 loadLessons();
