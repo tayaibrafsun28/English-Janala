@@ -165,7 +165,8 @@ loadingSpinner(true)
 
                 <div class="flex justify-between mt-8">
                     <button onclick="loadWordDetail(${word.id})" class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-circle-info"></i></button>
-                    <button class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-volume"></i></button>
+
+                    <button onclick="pronounceWord('${word.word}')" class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-volume"></i></button>
                 </div>
 
     </div>
@@ -243,4 +244,12 @@ const searchWord = () =>{
         displayLevelWords(filtertedWords);
     });
 
+}
+
+// pronounce words functionality
+
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
 }
