@@ -174,10 +174,27 @@
             </div>
         </section>
 
+        <!-- Search Button -->
+
+        <section class="flex justify-center items-center">
+
+            <div class="join">
+                <div>
+                    <label class="input validator join-item">
+                        <input id="input-search" type="text" placeholder="Search your word" required />
+                    </label>
+                </div>
+                <button onclick="searchWord()" id="btn-search" class="btn btn-primary join-item">Search</button>
+            </div>
+
+        </section>
+
+        <!-- Loading Spinner -->
+
         <section id="loading-spinner" class="hidden">
             <div class="flex items-center justify-center">
                 <span class="loading loading-infinity loading-xl">
-            </span>
+                </span>
             </div>
         </section>
 

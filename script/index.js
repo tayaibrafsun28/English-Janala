@@ -220,3 +220,27 @@ const displayLessons = (lessons) =>{
 // calling loadLessons function
 
 loadLessons();
+
+// search words functionality
+
+const searchWord = () =>{
+
+    removeActive();
+    
+    const input = document.getElementById("input-search")
+
+    const searchValue = input.value.toLowerCase()
+
+    const allWordURL = "https://openapi.programming-hero.com/api/words/all"
+
+    fetch(allWordURL)
+    .then(res => res.json())
+    .then(data => {
+        const allWords = data.data;
+        
+        const filtertedWords = allWords.filter((word) => word.word.toLowerCase().includes(searchValue));
+
+        displayLevelWords(filtertedWords);
+    });
+
+}
