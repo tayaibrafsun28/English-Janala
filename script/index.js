@@ -1,3 +1,10 @@
+const loadSynonyms = (arr) =>{
+    const synonyms = arr.map((synonym) =>
+        `<span class="btn bg-[#EDF7FF]">${synonym}</span>`)
+        return synonyms.join(" ")
+
+}
+
 // load lesson function
 
 const loadLessons = () =>{
@@ -37,6 +44,57 @@ const loadLevelWord = (id) =>{
 
 }
 
+
+// load word detail function using async
+
+const loadWordDetail = async(id) =>{
+
+    const wordDetailURL = `https://openapi.programming-hero.com/api/word/${id}`
+
+    const res = await fetch(wordDetailURL);
+    const details = await res.json()
+
+    displayWordDetails(details.data)
+
+}
+
+// display word details
+
+const displayWordDetails = (words) =>{
+
+    const detailsBox = document.getElementById("details-container")
+    detailsBox.innerHTML=`
+    
+                        <div>
+                        <h1 class="font-semibold text-2xl md:text-3xl 2xl:text-4xl">${words.word} (<i
+                                class="fa-solid fa-microphone-lines"></i>:<span
+                                class="font-bangla font-semibold text-2xl md:text-3xl 2xl:text-4xl">${words.pronunciation}</span>)</h1>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-lg md:text-xl 2xl:text-2xl mb-3">Meaning</h3>
+                        <p class="font-bangla text-lg md:text-xl 2xl:text-2xl font-medium">${words.meaning}</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-lg md:text-xl 2xl:text-2xl mb-3">Example</h3>
+                        <p class="text-lg md:text-xl 2xl:text-2xl">${words.sentence}</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bangla text-lg md:text-xl 2xl:text-2xl font-medium mb-3">সমার্থক শব্দ গুলো</h3>
+
+                        
+                        <div class="space-x-1">
+                        ${loadSynonyms(words.synonyms)}
+                        </div>
+                    </div>
+    
+    `;
+    
+    document.getElementById("word_modal").showModal();
+
+}
 
 // display words
 
@@ -81,7 +139,7 @@ const displayLevelWords = (words) =>{
                 </div>
 
                 <div class="flex justify-between mt-8">
-                    <button onclick="my_modal_5.showModal()" class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-circle-info"></i></button>
+                    <button onclick="loadWordDetail(${word.id})" class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-circle-info"></i></button>
                     <button class="p-2 bg-[#E8F4FF] hover:bg-sky-300 rounded-md"><i class="fa-solid fa-volume"></i></button>
                 </div>
 
