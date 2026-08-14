@@ -5,11 +5,11 @@ const login = () =>{
     const userNameElement = document.getElementById("user-name");
     const userPasswordElement = document.getElementById('password');
 
-    // Fetch mobile number
+    // Fetch user name
 
     const userName = document.getElementById("user-name").value;
 
-    // Fetch pin number
+    // Fetch password
 
     const userPassword = document.getElementById('password').value;
 
@@ -18,7 +18,7 @@ const login = () =>{
     if (userName === 'rafsun' && userPassword === '1234') {
         alert('Login Completed');
         
-        // Redirecting to home.html page
+        // Redirecting
 
         const logoutBtn = document.getElementById("logout-btn")
 
@@ -28,7 +28,6 @@ const login = () =>{
 
         userNameElement.value = '';
         userPasswordElement.value = '';
-        return;
            
     }
 
@@ -39,7 +38,6 @@ const login = () =>{
          
         userNameElement.value = '';
         userPasswordElement.value = '';
-        return;
     }
 }
 
