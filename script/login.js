@@ -1,3 +1,5 @@
+// Login function
+
 const login = () =>{
 
     // 1. Fetch the actual HTML input elements first
@@ -40,6 +42,9 @@ const login = () =>{
         userPasswordElement.value = '';
     }
 }
+
+// Logout function
+
 
 const logout = () => {
 

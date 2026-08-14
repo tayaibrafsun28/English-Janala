@@ -60,30 +60,31 @@
                     </div>
                     <ul tabindex="-1"
                         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3">
+
                         <li>
-                            <a>
-                                <i class="fa-solid fa-circle-question"></i>FAQ
+                            <a href="#navbar">
+                                <i class="fa-solid fa-house"></i>Home
                             </a>
                         </li>
 
                         <li>
-                            <a>
+                            <a href="#lessons-section">
                                 <i class="fa-solid fa-book-open"></i>Learn
                             </a>
                         </li>
 
-                        <li>
-                            <a>
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
-                            </a>
-                        </li>
+                        <li id="logout-btn" onclick="logout()" class="hidden">
+                        <a>
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+                        </a>
+                    </li>
                     </ul>
                 </div>
 
                 <!-- Nav-logo -->
 
                 <div class="flex items-center space-x-4">
-                    <a class="btn btn-ghost text-xl">
+                    <a href="#navbar" class=" flex justify-center items-center px-4 gap-2 text-xl">
                         <span class="text-lg font-semibold">English</span>
                         <img src="./assets/logo.png" alt=""> <span class="font-bangla font-semibold">জানালা</span>
                     </a>
@@ -150,7 +151,7 @@
 
                     <button type="button" onclick="login()" class="btn btn-primary self-center md:self-start mt-2">Get
                         Started</button>
-                    </form>
+                </form>
 
 
             </div>
