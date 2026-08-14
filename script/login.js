@@ -24,7 +24,11 @@ const login = () =>{
 
         const logoutBtn = document.getElementById("logout-btn")
 
+        const logoutBtnHam = document.getElementById("logout-btn-ham")
+
         logoutBtn.classList.remove("hidden")
+
+        logoutBtnHam.classList.remove("hidden")
 
         // Clear fields automatically on failed login so they can try again
 
@@ -51,5 +55,10 @@ const logout = () => {
     alert('Logged Out Successfully');
 
     const logoutBtn = document.getElementById("logout-btn")
+
+    const logoutBtnHam = document.getElementById("logout-btn-ham")
+
     logoutBtn.classList.add("hidden")
+    logoutBtnHam.classList.add("hidden")
+
 }
