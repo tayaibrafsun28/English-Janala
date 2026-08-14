@@ -1,9 +1,11 @@
 const login = () =>{
 
-        // 1. Fetch the actual HTML input elements first
+    // 1. Fetch the actual HTML input elements first
+
     const userNameElement = document.getElementById("user-name");
     const userPasswordElement = document.getElementById('password');
-     // Fetch mobile number
+
+    // Fetch mobile number
 
     const userName = document.getElementById("user-name").value;
 
@@ -26,6 +28,7 @@ const login = () =>{
 
         userNameElement.value = '';
         userPasswordElement.value = '';
+        return;
            
     }
 
